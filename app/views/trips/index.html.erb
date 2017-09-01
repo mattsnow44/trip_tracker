@@ -1,0 +1,13 @@
+<h1><%= current_user.first_name %>'s Trips</h1>
+
+<ol>
+  <% @trips.each do |t| %>
+  <li><%= link_to t.name, t %></li>
+  <% end %>
+
+</ol>
+
+
+
+
+<%= link_to 'New Trip', new_trip_path %>
