@@ -2,3 +2,4 @@
 
 <%= link_to 'Edit', edit_trip_location_path([@trip, @location]) %>
 <%= link_to 'Delete', trip_location_path([@trip, @location]), method: :delete %>
+<%= link_to 'Add Address', new_location_address_path(@location) %>
