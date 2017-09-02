@@ -1,0 +1,7 @@
+<h1><%= @location.id ? 'Edit' : "Add A Location To Your Trip" %></h1>
+
+<%= form_for ([@trip, @location]) do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name, autofocus: true %>
+<%= f.submit %>
+<% end %>

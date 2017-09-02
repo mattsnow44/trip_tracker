@@ -1,0 +1,4 @@
+<h1><%= @location.name %></h1>
+
+<%= link_to 'Edit', edit_trip_location_path([@trip, @location]) %>
+<%= link_to 'Delete', trip_location_path([@trip, @location]), method: :delete %>

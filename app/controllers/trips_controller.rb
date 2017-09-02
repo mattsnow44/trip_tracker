@@ -12,25 +12,39 @@ class TripsController < ApplicationController
 
   def new
     @trip = Trip.new
+    render partial: 'form'
   end
 
   def create
     @trip = current_user.trips.new(trip_params)
     if @trip.save
-      redirect_to trips_path
+      redirect_to @trip
     else
-      binding.pry
-      render :new
+      render partial: 'form'
     end
   end
 
   def edit
+    render partial: 'form'
+  end
+
+  def update
+    if @trip.update(trip_params)
+      redirect_to @trip
+    else
+      render partial: 'form'
+    end
+  end
+
+  def destroy
+    @trip.destroy
+    redirect_to trips_path
   end
 
   private
 
   def set_trip
-    @trip = Trip.find(params[:id])
+    @trip = current_user.trips.find(params[:id])
   end
   def trip_params
     params.require(:trip).permit(:name, :user_id)

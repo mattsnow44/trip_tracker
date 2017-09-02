@@ -1,0 +1,10 @@
+<h1><%= @trip.id ? 'Edit' : "Where do you want to go, #{current_user.first_name}" %></h1>
+
+<%= form_for @trip do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name, autofocus: true %>
+<%= f.submit %>
+<% end %>
+
+
+<%= link_to 'Home', trips_path %>

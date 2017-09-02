@@ -1,1 +1,14 @@
 <h1><%= @trip.name %></h1>
+
+<ul>
+<% @trip.locations.each do |location| %>
+<li><%= link_to location.name, trip_location_path(@trip, location) %></li>
+<% end %>
+</li>
+
+<hr>
+
+<%= link_to 'Home', trips_path %>
+<%= link_to 'Edit Trip', edit_trip_path(@trip) %>
+<%= link_to 'Delete', trip_path(@trip), method: :delete %>
+<%= link_to 'Add Location', new_trip_location_path(@trip) %>
