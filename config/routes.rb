@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
 
   scope 'locations/:location_id', as: 'location' do
-    resources :addresses, only: [:new, :create]
+    resources :addresses
   end
 
 end
