@@ -1,13 +1,36 @@
 <h1><%= @location.name %></h1>
 
-
+<div class="ui button">
 <% if @location.address != nil %>
 <%= @location.address.raw_street_address %>
 <% end %>
+</div>
 
 <hr>
-
-<%= link_to 'Edit', edit_trip_location_path([@trip, @location]) %>
-<%= link_to 'Delete', trip_location_path([@trip, @location]), method: :delete %>
-<%= link_to 'Add Address', new_location_address_path(@location) %>
-<%= link_to 'Edit Address', edit_location_address_path([@location, @location.address]) %>
+<table class="striped">
+  <tr>
+    <td>
+      <%= link_to 'Edit', edit_trip_location_path([@trip, @location]) %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= link_to 'Delete', trip_location_path([@trip, @location]), method: :delete %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= link_to 'Add Address', new_location_address_path(@location) %>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%= link_to 'Edit Address', edit_location_address_path([@location, @location.address]) %>
+    </td>
+    </tr>
+  <tr>
+    <td>
+      <%= link_to 'Back', @trip %>
+  </td>
+  </tr>
+</table>

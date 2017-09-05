@@ -1,13 +1,17 @@
 <h1><%= current_user.first_name %>'s Trips</h1>
-
+<hr />
 <ol>
-  <% @trips.each do |t| %>
-  <li><%= link_to t.name, t %></li>
-  <% end %>
+  <div class="ui vertical buttons">
+    <% @trips.each do |t| %>
+    <button class="huge ui button" >
+    <li><%= link_to t.name, t %></li>
+    <% end %>
+  </button>
 
-</ol>
 
 
-
-
+<br />
+<button class="waves-effect waves-teal btn-flat">
 <%= link_to 'New Trip', new_trip_path %>
+</button>
+</div>
