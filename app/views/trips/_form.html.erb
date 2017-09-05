@@ -1,12 +1,12 @@
+<%= stylesheet_link_tag "application" %>
 <h1><%= @trip.id ? 'Edit' : "Where do you want to go, #{current_user.first_name} ?" %></h1>
 
+<div class="input-field col s6">
 <%= form_for @trip do |f| %>
-<div class="ui input">
-<%= f.label :name %>
 <%= f.text_field :name, autofocus: true %>
 </div>
 <br />
-<div class="ui button">
+<div class="class="waves-effect waves-light btn"">
 <%= f.submit %>
 </div>
 <% end %>

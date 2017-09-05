@@ -1,3 +1,4 @@
+<%= stylesheet_link_tag "application" %>
 <h1><%= @location.id ? 'Edit' : "Add A Location To Your Trip" %></h1>
 
 <%= form_for ([@trip, @location]) do |f| %>
@@ -5,3 +6,8 @@
 <%= f.text_field :name, autofocus: true %>
 <%= f.submit %>
 <% end %>
+
+<br />
+<button class="ui button">
+<%= link_to 'Home', trips_path %>
+</button>
